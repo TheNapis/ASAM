@@ -1,0 +1,35 @@
+﻿<Window x:Name="window"
+        x:Class="ASAM_Client.View.ShutdownViews.NormalShutdown"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ASAM_Client.View.ShutdownViews"
+        mc:Ignorable="d"
+        Title="BatteryVeryLow" Height="450" Width="800"  ResizeMode="NoResize" 
+        WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="#FF2E75D8">
+    <Grid>
+        <TextBlock Name="MyFadingText" Margin="20"  FontSize="20" 
+       FontWeight="Bold" Foreground="White" Text="" VerticalAlignment="Center"
+       HorizontalAlignment="Center" >
+
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                    Storyboard.TargetName="MyFadingText" 
+                    Storyboard.TargetProperty="(TextBlock.Opacity)"
+                    From="0.0" To="1.0" Duration="0:0:2" 
+                    AutoReverse="True" RepeatBehavior="Forever" >
+                                <DoubleAnimation.EasingFunction>
+                                    <CircleEase EasingMode="EaseIn"/>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>
+    </Grid>
+</Window>

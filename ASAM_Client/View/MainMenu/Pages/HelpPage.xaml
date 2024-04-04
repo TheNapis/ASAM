@@ -1,0 +1,138 @@
+﻿<UserControl x:Class="ASAM_Client.View.MainMenu.Pages.HelpPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ASAM_Client.View.MainMenu.Pages"
+             xmlns:fa="http://schemas.fontawesome.com/icons/svg"
+             mc:Ignorable="d" 
+             Height="auto" Width="auto" Background="#2e75d8" d:DesignHeight="500" d:DesignWidth="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <!--Colone de gauche-->
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Internet" FontFamily="Microsoft YaHei UI" FontWeight="Bold" Foreground="White" 
+                           VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="25"  Margin="0,5,0,0"/>
+                <TextBlock Grid.Row="0" Text="Si l'icône :" FontFamily="Microsoft YaHei UI" FontWeight="Light"  Foreground="White" 
+                           VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20"  Margin="5,-50,0,0"/>
+                <fa:SvgAwesome Name="ICON2" Icon="Solid_Wifi" PrimaryColor="Red" Height="25"
+                           VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="5,-50,0,0"/>
+                <TextBlock Grid.Row="0" Text="s'affiche" FontFamily="Microsoft YaHei UI" FontWeight="Light"  Foreground="White" 
+                          VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20"  Margin="0,-50,5,0" />
+                <TextBlock Grid.Row="0" Text="Signaler cet ordinateur à votre Administrateur" FontFamily="Microsoft YaHei UI" FontWeight="Light"  Foreground="White" 
+                           VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"  Margin="5,100,0,0"/>
+                <TextBlock Grid.Row="0" Text="Sinon c'est qu'il n'y a aucun problème :)" FontFamily="Microsoft YaHei UI" FontWeight="Light"  Foreground="White" 
+                           VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20"  Margin="5,100,0,5"/>
+
+                <Grid  Grid.Row="1" Background="#0044a3"/>
+
+                <TextBlock Grid.Row="2" Text="Autres Problèmes" FontFamily="Microsoft YaHei UI" FontWeight="Bold" Foreground="White" 
+                           VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="25" Margin="0,5,0,0"/>
+                <TextBlock Grid.Row="2" Text="Je m'adresse à mon administrateur" FontFamily="Microsoft YaHei UI" FontWeight="Light"  Foreground="White" 
+                           VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"  />
+
+
+            </Grid>
+
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.40*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="0.75*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Clavier et souris" FontFamily="Microsoft YaHei UI" FontWeight="Bold" Foreground="White" 
+                           VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="25"  Margin="0,5,0,0"/>
+                <TextBlock Text="1 : Je détache puis attache le clavier de l'ordinateur" FontFamily="Microsoft YaHei UI" FontWeight="Light"  Foreground="White" 
+                           VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"  Margin="5,0,0,0"/>
+                <TextBlock Text="(si son clavier est détachable)" FontFamily="Microsoft YaHei UI" FontWeight="Light"  Foreground="White" 
+                           VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"  Margin="5,50,0,0"/>
+                <TextBlock Text="2 : Essaye de redémarrer l'ordinateur" FontFamily="Microsoft YaHei UI" FontWeight="Light"  Foreground="White" 
+                           VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"  Margin="5,100,0,0"/>
+
+                <Grid  Grid.Row="1" Background="#0044a3"/>
+
+                
+
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="30*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="Problème de chargement" FontFamily="Microsoft YaHei UI" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" FontSize="25"  Margin="0,5,0,0"/>
+
+                    <TextBlock Grid.Row="2" Text="Je regarde si la lumière à côté du chargeur s'allume" FontFamily="Microsoft YaHei UI" FontWeight="Light"  Foreground="White" 
+                               VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" />
+                    <TextBlock Grid.Row="3" Text="Je vérifie que j'ai bien branché l'ordinateur" FontFamily="Microsoft YaHei UI" FontWeight="Light"  Foreground="White" 
+                               VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"  />
+                    <TextBlock Grid.Row="4" Text="Sinon je signale l'ordinateur à mon enseignant." FontFamily="Microsoft YaHei UI" FontWeight="Light"  Foreground="White" 
+                               VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"  />
+
+                    <Grid Grid.Row="6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="/Pictures/SCHEMA_BATT.png"  VerticalAlignment="Center" HorizontalAlignment="Center"  />
+                        <Image Grid.Column="1" Source="/Pictures/SCHEMA_BATT2.png"  VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Grid>
+                    
+
+
+                </Grid>
+                
+
+
+
+
+            </Grid>
+            <Rectangle Grid.Column="1" Fill="#0044a3"/>
+
+            
+
+
+            
+
+
+  
+
+
+
+        </Grid>
+
+
+
+
+
+
+
+        <Rectangle Grid.Row="1" Fill="#0044a3" />
+
+        <TextBlock Grid.Row="1" Text="Besoin d'aide ?" FontFamily="Microsoft YaHei UI" FontWeight="Bold" Foreground="White" 
+                   VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25"/>
+
+    </Grid>
+</UserControl>

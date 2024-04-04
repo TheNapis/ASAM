@@ -1,0 +1,114 @@
+﻿<UserControl x:Name="AuthPP"
+             x:Class="ASAM_Client.View.AuthMenu.PagePassword.AuthentificationPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ASAM_Client.View.AuthMenu.PagePassword"
+             xmlns:fa="http://schemas.fontawesome.com/icons/svg"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="#2e75d8">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="0" Background="#0044a3">
+            <TextBlock Text="Zone réservée au personnel" FontFamily="Microsoft YaHei UI" FontSize="30"
+           Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <Button Name="btnReturn" Grid.Column="5" BorderThickness="0" Click="btnReturn_Click"
+                HorizontalAlignment="Right" VerticalAlignment="Center" Width="120" Height="90">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <fa:SvgAwesome Grid.Row="0" Icon="Solid_ArrowRight" PrimaryColor="White" Height="30" VerticalAlignment="Top" Margin="0,10,0,0"/>
+                    <TextBlock Grid.Row="1" Text="Retour" Foreground="White" VerticalAlignment="Bottom" FontFamily="Microsoft YaHei UI"
+               FontSize="16" Margin="10"/>
+                </Grid>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DodgerBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Cette section requiert le mot de passe du Personnel" FontFamily="Microsoft YaHei UI" FontSize="20"
+                   Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" TextDecorations="Underline"/>
+
+            <TextBlock Grid.Row="1" Text="Entrer votre mot de passe" FontFamily="Microsoft YaHei UI" FontSize="20"
+                   Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+
+            <PasswordBox Grid.Row="2" Height="42" Width="200"  Margin="22,28,28,0" Name="passwordBox1" VerticalAlignment="Top" 
+                    Background="LightBlue" Foreground="DarkBlue" MaxLength="25" PasswordChar="*" 
+                     VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                     FontSize="14" PasswordChanged="passwordBox1_PasswordChanged" KeyDown="OnKeyDownHandler"/>
+
+        </Grid>
+
+        <Grid Grid.Row="2" Background="#0044a3">
+
+
+            <Button x:Name="btnEnter" BorderThickness="0" Grid.Column="0" Grid.Row="1" Foreground="White" Cursor="Hand" FontSize="16" 
+                Width="100" Click="btnEnter_Click" HorizontalAlignment="Right" Margin="10">
+
+                <Grid>
+                    <fa:SvgAwesome Grid.Row="0" Icon="Solid_CircleArrowRight" PrimaryColor="White" Height="30" VerticalAlignment="Top" Margin="0,10,0,0"/>
+                    <TextBlock Text="Suivant" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" FontFamily="Microsoft YaHei UI" FontSize="16"/>
+                </Grid>
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#32cd32"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#259a25"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
+
+    </Grid>
+</UserControl>
