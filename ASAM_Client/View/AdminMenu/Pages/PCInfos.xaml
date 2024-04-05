@@ -30,8 +30,10 @@
 
             <TextBlock Name="txtOSVer" Grid.Row="0" Text="Chargement de la version du PC..." VerticalAlignment="Center" Margin="5,0,0,0" FontSize="20" 
                        Foreground="White"/>
-            <TextBlock Name="txtSpace" Grid.Row="0" Text="Chargement de la version du PC..." VerticalAlignment="Center" Margin="5,0,0,0" FontSize="20" 
+            <TextBlock Name="txtName" Grid.Row="1" Text="Chargement du nom..." VerticalAlignment="Center" Margin="5,0,0,0" FontSize="20" 
                        Foreground="White"/>
+            <TextBlock Name="txtSpaceDisk" Grid.Row="2" Text="Chargement de l'espace disque... " VerticalAlignment="Center" Margin="5,0,0,0" FontSize="20" 
+           Foreground="White"/>
 
 
             <Button x:Name="btnClose" BorderThickness="0" Grid.Row="5" Foreground="White" Cursor="Hand" 

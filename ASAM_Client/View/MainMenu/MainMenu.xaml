@@ -231,7 +231,7 @@
         </Grid>
 
         <Grid x:Name="MainGrid" Grid.Row="1">
-            <UserApps:UserApps Grid.Row="1"/>
+            <UserApps:UserAppsList Grid.Row="1"/>
         </Grid>
         
         

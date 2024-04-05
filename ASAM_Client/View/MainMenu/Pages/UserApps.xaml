@@ -24,7 +24,7 @@
                    Margin="0,0,0,0" Foreground="White"/>
 
         <Button x:Name="btnWriter" BorderThickness="0" Grid.Column="0" Grid.Row="1" Foreground="White" Cursor="Hand" FontSize="16" 
-                Width="200" Click="btnWriter_Click">
+                Width="200" Click="btnWriter_Click" Margin="0,0,0,10">
 
             <Grid>
                 <Image Source="/Pictures/AppsLogos/Writer.png" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -52,7 +52,7 @@
             </Button.Template>
         </Button>
         <Button x:Name="btnPresentation" BorderThickness="0" Grid.Column="0" Grid.Row="2" Foreground="White" Cursor="Hand" FontSize="16" 
-                Width="200" Click="btnPresentation_Click">
+                Width="200" Click="btnPresentation_Click" Margin="0,0,0,10">
 
             <Grid>
                 <Image Source="/Pictures/AppsLogos/Presentation.png" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -84,7 +84,7 @@
 
             <Grid>
                 <Image Source="/Pictures/AppsLogos/Calc.png" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <TextBlock Text="Libre Office Tableur" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" FontFamily="Microsoft YaHei UI" FontSize="14"/>
+                <TextBlock Text="LibreOffice Tableur" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" FontFamily="Microsoft YaHei UI" FontSize="14"/>
             </Grid>
 
             <Button.Style>
@@ -115,7 +115,7 @@
            Margin="0,0,0,0" Grid.Column="1" Foreground="White"/>
 
         <Button x:Name="btnScratch" BorderThickness="0" Grid.Column="1" Grid.Row="1" Foreground="White" Cursor="Hand" FontSize="16" 
-        Width="200" Click="btnScratch_Click">
+        Width="200" Click="btnScratch_Click" Margin="0,0,0,10">
 
             <Grid>
                 <Image Source="/Pictures/AppsLogos/Scratch.png" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -143,7 +143,7 @@
             </Button.Template>
         </Button>
         <Button x:Name="btnInternet" BorderThickness="0" Grid.Column="1" Grid.Row="2" Foreground="White" Cursor="Hand" FontSize="16" 
-        Width="200" Click="btnInternet_Click">
+        Width="200" Click="btnInternet_Click" Margin="0,0,0,10">
 
             <Grid>
                 <Image Source="/Pictures/AppsLogos/Edge.png" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -206,7 +206,7 @@
        Margin="0,0,0,0" Grid.Column="2" Foreground="White"/>
 
         <Button x:Name="btnGIMP" BorderThickness="0" Grid.Column="2" Grid.Row="1" Foreground="White" Cursor="Hand" FontSize="16" 
-    Width="200" Click="btnGIMP_Click">
+    Width="200" Click="btnGIMP_Click" Margin="0,0,0,10">
 
             <Grid>
                 <Image Source="/Pictures/AppsLogos/GIMP.png" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -234,7 +234,7 @@ Background="{TemplateBinding Background}">
             </Button.Template>
         </Button>
         <Button x:Name="btnVocal" BorderThickness="0" Grid.Column="2" Grid.Row="2" Foreground="White" Cursor="Hand" FontSize="16" 
-                Width="200" Click="btnVocal_Click">
+                Width="200" Click="btnVocal_Click" Margin="0,0,0,10">
 
             <Grid>
                 <Image Source="/Pictures/AppsLogos/Vocal.png" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"/>

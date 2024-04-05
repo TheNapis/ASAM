@@ -107,7 +107,7 @@ namespace ASAM_Client.View.MainMenu
         private void btnApps_Click(object sender, RoutedEventArgs e)
         {
             MainGrid.Children.Clear();
-            Pages.UserApps usercontrol = new Pages.UserApps();
+            Pages.UserAppsList usercontrol = new Pages.UserAppsList();
             MainGrid.Children.Add(usercontrol);
         }
 
