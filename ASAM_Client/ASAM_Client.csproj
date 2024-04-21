@@ -75,7 +75,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModel\MainCommand.cs" />
+    <Compile Include="ACCDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ACCDDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="View\AdminMenu\MainAdminMenu.xaml.cs">
       <DependentUpon>MainAdminMenu.xaml</DependentUpon>
     </Compile>
@@ -133,8 +137,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AuthMenu\AuthMenu.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\AuthMenu\PagePassword\AuthentificationPage.xaml">
       <SubType>Designer</SubType>
@@ -191,6 +195,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ACCDDataSet.xsc">
+      <DependentUpon>ACCDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ACCDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ACCDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ACCDDataSet.xss">
+      <DependentUpon>ACCDDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -201,6 +216,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
+    <Folder Include="ViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FontAwesome6.Svg">

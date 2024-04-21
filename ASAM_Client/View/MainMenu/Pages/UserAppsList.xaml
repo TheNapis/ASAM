@@ -11,9 +11,9 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30"/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="60*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
@@ -24,30 +24,73 @@
         <TextBlock Grid.Column="1" Grid.ColumnSpan="3" Text="Choisissez votre application dans la liste."
                    Foreground="White" FontSize="20" FontFamily="Microsoft YaHei UI" FontWeight="Bold"
                    VerticalAlignment="Center" />
-        
-        <ListBox Grid.Column="1" Grid.Row="1" Name="Appslist"
-                  TextBlock.FontSize="16" TextBlock.FontFamily="Microsoft YaHei UI">
-            <ListBoxItem>
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/Pictures/AppsLogos/Writer.png" />
-                    <TextBlock VerticalAlignment="Center" Padding="5">LibreOffice Texte</TextBlock>
-                </StackPanel>
-            </ListBoxItem>
-            <ListBoxItem>
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/Pictures/AppsLogos/Presentation.png" />
-                    <TextBlock VerticalAlignment="Center" Padding="5">LibreOffice Presentation</TextBlock>
-                </StackPanel>
-            </ListBoxItem>
-            <ListBoxItem>
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/Pictures/AppsLogos/Calc.png" />
-                    <TextBlock VerticalAlignment="Center" Padding="5">LibreOffice Tableur</TextBlock>
-                </StackPanel>
-            </ListBoxItem>
+
+        <ListBox x:Name="LstAppsXAML" Grid.Column="1" Grid.Row="1" SelectionChanged="LstAppsXAML_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Image Grid.Column="0" Source="{Binding ImagePath}" />
+                        <TextBlock Grid.Column="1" Text="{Binding Name}"  FontSize="16" 
+                                   FontFamily="Microsoft YaHei UI" VerticalAlignment="Center" Padding="5" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
 
+        <Grid Grid.Column="4" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="txtNameApp" Grid.Row="0" Text="Sélectionnez une application" 
+               Foreground="White" FontSize="20" FontFamily="Microsoft YaHei UI" FontWeight="Bold"
+               HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
+            <Image x:Name="ImgApps" Grid.Row="1" Source="{Binding ImagePath}" />
+            
+            <TextBlock x:Name="txtDescriptionApp" Grid.Row="2" Text="Description de l'application" 
+                       Foreground="White" FontSize="16" FontFamily="Microsoft YaHei UI"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <Button x:Name="btnEnter" BorderThickness="0" Grid.Row="3" Foreground="White" Cursor="Hand" 
+                    FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"
+                    Height="50" Width="100" Click="btnEnter_Click"
+                    Visibility="Hidden">
+
+                <Grid>
+                    <TextBlock Text="Lancer"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" FontFamily="Microsoft YaHei UI"
+                               FontSize="16" FontWeight="Bold"/>
+                </Grid>
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#32cd32"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#259a25"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15"
+                Background="{TemplateBinding Background}">
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+        </Grid>
 
 
 
