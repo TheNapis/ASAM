@@ -23,7 +23,6 @@ namespace ASAM_Client.View.AuthMenu.PagePassword
         public AuthentificationPage()
         {
             InitializeComponent();
-
         }
 
         private void btnReturn_Click(object sender, RoutedEventArgs e)
@@ -73,6 +72,7 @@ namespace ASAM_Client.View.AuthMenu.PagePassword
                     }
                     else
                     {
+                        passwordBox1.Clear();
                         MessageBox.Show("Mot de passe incorrect. Réessayer", "MDP Incorrect :(", MessageBoxButton.OK, MessageBoxImage.Error);
                         passerror++;
                     }

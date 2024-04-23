@@ -1,11 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using System.Data.SQLite;
+using System.Diagnostics;
+using ASAM_Client.Model;
+using System.Data.SqlClient;
+using System.Data;
+using System.Collections.Generic;
+using System.Threading;
+using System.Windows.Markup;
 
 namespace ASAM_Client.View.MainMenu.Pages
 {
@@ -15,14 +19,13 @@ namespace ASAM_Client.View.MainMenu.Pages
     /// 
     public partial class UserAppsList : UserControl
     {
-        static String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\ASAMClientConfigurationData.mdf;Integrated Security=True";
-        SqlConnection con;
-        SqlCommand cmd;
-        SqlDataAdapter adapter;
+        static String connectionString = @"Data Source=C:\ASAM\ASAM_Client\ASAMClientConfigurationData.sqlite; Version = 3; New = True; Compress = True;";
+        SQLiteConnection con;
+        SQLiteCommand cmd;
+        SQLiteDataAdapter adapter;
         DataSet ds;
-        SqlDataReader reader;
+        SQLiteDataReader reader;
         string ExecutablePath;
-        
 
         public UserAppsList()
         {
@@ -36,10 +39,10 @@ namespace ASAM_Client.View.MainMenu.Pages
         {
             try
             {
-                con = new SqlConnection(connectionString);
+                con = new SQLiteConnection(connectionString);
                 con.Open();
-                cmd = new SqlCommand("SELECT * FROM AppList", con);
-                adapter = new SqlDataAdapter(cmd);
+                cmd = new SQLiteCommand("SELECT * FROM AppList", con);
+                adapter = new SQLiteDataAdapter(cmd);
                 ds = new DataSet();
                 adapter.Fill(ds, "Applist");
                 Apps co = new Apps();
@@ -57,21 +60,15 @@ namespace ASAM_Client.View.MainMenu.Pages
                     });
                 }
                 LstAppsXAML.ItemsSource = co1;
-            
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("ASAM rencontre une erreur critique. Code Erreur : Coin coin", "ASAM inutilisable", MessageBoxButton.OK,MessageBoxImage.Error);
-                MessageBox.Show("ASAM étant inutilisable, le logiciel va fermer.", "ASAM inutilisable", MessageBoxButton.OK, MessageBoxImage.Error);
-                Application.Current.Shutdown();
-            }
-            finally
-            {
-                ds = null;
-                adapter.Dispose();
-                con.Close();
-                con.Dispose();
-            }
+            catch (Exception ex) 
+            { 
+                MainFunctions.Logger(ex.Message);
+                ErrorView.ErrorView view = new ErrorView.ErrorView();
+                view.ShowDialog();
+                view.Topmost = true;
+
+            } 
         }
 
         public class Apps
@@ -97,7 +94,24 @@ namespace ASAM_Client.View.MainMenu.Pages
 
         private void btnEnter_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("explorer.exe", ExecutablePath);
+            try
+            {
+                Process.Start(ExecutablePath);
+            }
+            catch
+            {
+                try
+                {
+                    Process.Start("explorer.exe",ExecutablePath);
+                }
+                catch(Exception ex)
+                {
+                    MainFunctions.Logger(ex.Message);
+                    MessageBox.Show("Cette application semble avoir un problème. Code d'erreur : ", "Erreur");
+                }
+                
+            }
+            
         }
     }
 }

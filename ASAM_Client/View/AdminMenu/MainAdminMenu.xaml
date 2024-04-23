@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ASAM_Client.View.AdminMenu"
         xmlns:fa="http://schemas.fontawesome.com/icons/svg"
         mc:Ignorable="d"
-        Title="Menu Réservé - ASAM Client" Height="500" Width="800" ResizeMode="NoResize" WindowStyle="None" WindowState="Maximized">
+        Title="Menu Réservé - ASAM Client" d:Height="800" d:Width="1200" ResizeMode="NoResize" WindowStyle="None" WindowState="Maximized">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
@@ -16,6 +16,40 @@
         <Grid Grid.Row="0" Background="#0044a3">
             <TextBlock Text="Zone personnel" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"
                        Foreground="White" FontFamily="Microsoft Yahei UI" />
+
+            <Button Name="btnReturn" Grid.Column="5" BorderThickness="0" Click="btnReturn_Click"
+                    HorizontalAlignment="Right" VerticalAlignment="Center" Width="120" Height="90">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <fa:SvgAwesome Grid.Row="0" Icon="Solid_ArrowRight" PrimaryColor="White" Height="30" VerticalAlignment="Top" Margin="0,10,0,0"/>
+                    <TextBlock Grid.Row="1" Text="Retour" Foreground="White" VerticalAlignment="Bottom" FontFamily="Microsoft YaHei UI"
+                               FontSize="16" Margin="10"/>
+                </Grid>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DodgerBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </Grid>
 
         <Grid Grid.Row="1" Background="#2e75d8">
@@ -24,84 +58,50 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
 
             <TextBlock Text="Bonjour, sélectionner une option." FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"
                        Foreground="White" FontFamily="Microsoft Yahei UI" />
 
-            <Button x:Name="btnInfoPC" BorderThickness="0" Grid.Row="1" Foreground="White" Cursor="Hand" 
-                    Width="200" Height="100" Click="btnInfoPC_Click"  HorizontalAlignment="Left" Margin="30,0,0,0">
-                <Grid>
-                    <fa:SvgAwesome Icon="Solid_CircleInfo" PrimaryColor="White" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                    <TextBlock Text="Informations PC" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" FontFamily="Microsoft YaHei UI" FontSize="14"/>
-                </Grid>
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Background" Value="#fa8072"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#c6655a"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="15"
-                    Background="{TemplateBinding Background}">
-                            <ContentPresenter/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-
-            <Button x:Name="btnStatus" BorderThickness="0" Grid.Row="1" Foreground="White" Cursor="Hand" 
-                    Width="200" Height="100" Click="btnStatus_Click"  HorizontalAlignment="Right" Margin="0,0,30,0">
-                <Grid>
-                    <fa:SvgAwesome Icon="Solid_ChartSimple" PrimaryColor="White" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                    <TextBlock Text="Status de fonctionnement" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" FontFamily="Microsoft YaHei UI" FontSize="14"/>
-                </Grid>
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Background" Value="#fa8072"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#c6655a"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="15"
-        Background="{TemplateBinding Background}">
-                            <ContentPresenter/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-
-
-
-
-
-
-
-
-            
-
-            <Grid Grid.Row="3">
+            <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="btnClose" BorderThickness="0" Grid.Column="0" Foreground="White" Cursor="Hand" 
-                        Width="120" Height="100" Click="btnClose_Click"  HorizontalAlignment="Center" >
+                <Button x:Name="btnInfoPC" BorderThickness="0" Grid.Column="0" Foreground="White" Cursor="Hand" 
+            Width="200" Height="100" Click="btnInfoPC_Click" >
                     <Grid>
-                        <fa:SvgAwesome Icon="Solid_DoorOpen" PrimaryColor="White" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                        <TextBlock Text="Quitter ASAM" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" FontFamily="Microsoft YaHei UI" FontSize="14"/>
+                        <fa:SvgAwesome Icon="Solid_LaptopCode" PrimaryColor="White" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <TextBlock Text="Informations PC" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" FontFamily="Microsoft YaHei UI" FontSize="14"/>
+                    </Grid>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#fa8072"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#c6655a"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="15"
+            Background="{TemplateBinding Background}">
+                                <ContentPresenter/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="btnAbout" BorderThickness="0" Grid.Column="1" Foreground="White" Cursor="Hand" 
+            Width="200" Height="100" Click="btnAbout_Click">
+                    <Grid>
+                        <fa:SvgAwesome Icon="Solid_CircleInfo" PrimaryColor="White" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <TextBlock Text="À propos de ASAM Client" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" FontFamily="Microsoft YaHei UI" FontSize="14"/>
                     </Grid>
                     <Button.Style>
                         <Style TargetType="Button">
@@ -122,8 +122,105 @@ Background="{TemplateBinding Background}">
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Button x:Name="btnRestart" BorderThickness="0" Grid.Column="2" Foreground="White" Cursor="Hand" 
-                Width="120" Height="100" Click="btnRestart_Click"  HorizontalAlignment="Center" >
+
+
+                <Button x:Name="btnSettings" BorderThickness="0" Grid.Column="2" Foreground="White" Cursor="Hand" 
+            Width="200" Height="100" Click="btnSettings_Click">
+                    <Grid>
+                        <fa:SvgAwesome Icon="Solid_Gears" PrimaryColor="White" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <TextBlock Text="Paramètres" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" FontFamily="Microsoft YaHei UI" FontSize="14"/>
+                    </Grid>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#fa8072"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#c6655a"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="15"
+Background="{TemplateBinding Background}">
+                                <ContentPresenter/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+
+
+            </Grid>
+
+            
+
+            <Button x:Name="btnClose" BorderThickness="0" Grid.Column="0" Grid.Row="3" Foreground="White" Cursor="Hand" 
+                        Width="150" Height="100" Click="btnClose_Click"  HorizontalAlignment="Center" >
+                <Grid>
+                    <fa:SvgAwesome Icon="Solid_DoorOpen" PrimaryColor="White" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <TextBlock Text="Quitter ASAM" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" FontFamily="Microsoft YaHei UI" FontSize="14"/>
+                </Grid>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#fa8072"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#c6655a"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15"
+Background="{TemplateBinding Background}">
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+
+
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                
+                
+                <Button x:Name="btnSeission" BorderThickness="0" Grid.Column="2" Foreground="White" Cursor="Hand" 
+                        Width="150" Height="100" Click="btnSeission_Click"  HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <Grid>
+                        <fa:SvgAwesome Icon="Solid_RightFromBracket" PrimaryColor="White" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <TextBlock Text="Fermer la seission" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" FontFamily="Microsoft YaHei UI" FontSize="14"/>
+                    </Grid>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#fa8072"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#c6655a"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="15"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="btnRestart" BorderThickness="0" Grid.Column="1" Foreground="White" Cursor="Hand" 
+                Width="150" Height="100" Click="btnRestart_Click"  HorizontalAlignment="Center" >
                     <Button.Style>
                         <Style TargetType="{x:Type Button}">
                             <Setter Property="Background" Value="#fa8072"/>
@@ -147,8 +244,8 @@ Background="{TemplateBinding Background}">
                         <TextBlock Text="Redémarrer" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" FontFamily="Microsoft YaHei UI" FontSize="14"/>
                     </Grid>
                 </Button>
-                <Button x:Name="btnEteindre" BorderThickness="0" Grid.Column="1" Foreground="White" Cursor="Hand" 
-            Width="120" Height="100" Click="btnEteindre_Click"  HorizontalAlignment="Center" Margin="0,10,0,10">
+                <Button x:Name="btnEteindre" BorderThickness="0" Grid.Column="0" Foreground="White" Cursor="Hand" 
+                        Width="150" Height="100" Click="btnEteindre_Click"  HorizontalAlignment="Center" Margin="0,10,0,10">
                     <Grid>
                         <fa:SvgAwesome Icon="Solid_PowerOff" PrimaryColor="White" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" />
                         <TextBlock Text="Eteindre" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" FontFamily="Microsoft YaHei UI" FontSize="14"/>
@@ -172,8 +269,6 @@ Background="{TemplateBinding Background}">
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-
-
             </Grid>
 
             

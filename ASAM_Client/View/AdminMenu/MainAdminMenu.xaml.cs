@@ -1,12 +1,16 @@
-﻿using System.Windows;
+﻿using System;
+using System.Runtime.InteropServices;
+using System.Windows;
+using System.Diagnostics;
 
 namespace ASAM_Client.View.AdminMenu
 {
-    /// <summary>
-    /// Logique d'interaction pour MainAdminMenu.xaml
-    /// </summary>
+    
     public partial class MainAdminMenu : Window
     {
+        [DllImport("user32")]
+        public static extern bool ExitWindowsEx(uint uFlags, uint dwReason);
+
         public MainAdminMenu()
         {
             InitializeComponent();
@@ -17,12 +21,6 @@ namespace ASAM_Client.View.AdminMenu
             Pages.PCInfos pCInfos = new Pages.PCInfos();
             pCInfos.ShowDialog();
         }
-
-        private void btnStatus_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btnEteindre_Click(object sender, RoutedEventArgs e)
         {
             var result = MessageBox.Show("Voulez vous vraiment éteindre ce PC ?", "Eteindre",MessageBoxButton.YesNo,MessageBoxImage.Question);
@@ -33,7 +31,6 @@ namespace ASAM_Client.View.AdminMenu
             }
             else { }
         }
-
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             var result = MessageBox.Show("Voulez vous vraiment quitter ASAM ? " + " Le client se relancera si le PC est redémarré.", "Quitter ASAM Client", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -57,6 +54,33 @@ namespace ASAM_Client.View.AdminMenu
                 normalRestart.ShowDialog();
             }
             else { }
+        }
+        private void btnReturn_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Vous allez quittez l'espace réservé.", "Quitter l'espace réservé",MessageBoxButton.YesNo,MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                System.Diagnostics.Process.Start(System.Windows.Application.ResourceAssembly.Location);
+                System.Windows.Application.Current.Shutdown();
+            }
+        }
+        private void btnSeission_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Voulez vous vraiment fermer la seission : " + Environment.UserName + " ? ", "Fermer la session", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                ExitWindowsEx(0, 0);
+            }
+        }
+        private void btnAbout_Click(object sender, RoutedEventArgs e)
+        {
+            Pages.AboutASAM page = new Pages.AboutASAM();
+            page.ShowDialog();
+        }
+        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        {
+            Pages.Settings page = new Pages.Settings();
+            page.ShowDialog();
         }
     }
 }

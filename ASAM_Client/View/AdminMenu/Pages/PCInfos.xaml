@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ASAM_Client.View.AdminMenu.Pages"
         xmlns:fa="http://schemas.fontawesome.com/icons/svg"
         mc:Ignorable="d"
-        Title="Infos Machinem - ASAM Client" Height="500" Width="800" ResizeMode="NoResize" WindowStyle="None" WindowState="Maximized">
+        Title="Infos Machine - ASAM Client" Height="500" Width="800" ResizeMode="NoResize" WindowStyle="None" WindowState="Maximized">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
@@ -26,6 +26,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
 
             <TextBlock Name="txtOSVer" Grid.Row="0" Text="Chargement de la version du PC..." VerticalAlignment="Center" Margin="5,0,0,0" FontSize="20" 
@@ -36,7 +37,7 @@
            Foreground="White"/>
 
 
-            <Button x:Name="btnClose" BorderThickness="0" Grid.Row="5" Foreground="White" Cursor="Hand" 
+            <Button x:Name="btnClose" BorderThickness="0" Grid.Row="6" Foreground="White" Cursor="Hand" 
             Width="200" Height="100" Click="btnClose_Click"  HorizontalAlignment="Right" Margin="0,0,30,0">
                 <Grid>
                     <fa:SvgAwesome Icon="Solid_ArrowRight" PrimaryColor="White" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" />
