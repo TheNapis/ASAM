@@ -23,13 +23,69 @@ namespace ASAM_Client.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ASAMClientCon" +
-            "figurationData.mdf;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ASAMClientConfigurationData.sqlite;Version=3;New=True;Compress=True;")]
         public string ACCDPath {
             get {
                 return ((string)(this["ACCDPath"]));
+            }
+            set {
+                this["ACCDPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ErrorLevelAppList {
+            get {
+                return ((bool)(this["ErrorLevelAppList"]));
+            }
+            set {
+                this["ErrorLevelAppList"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/Fonts/OpenDyslexic3-Regular.ttf")]
+        public string Dyslexic {
+            get {
+                return ((string)(this["Dyslexic"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/Fonts/OpenDyslexic3-Bold.ttf")]
+        public string DyslexicBold {
+            get {
+                return ((string)(this["DyslexicBold"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Microsoft YaHei UI")]
+        public string UsedFont {
+            get {
+                return ((string)(this["UsedFont"]));
+            }
+            set {
+                this["UsedFont"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Microsoft YaHei UI")]
+        public string UsedBoldFont {
+            get {
+                return ((string)(this["UsedBoldFont"]));
+            }
+            set {
+                this["UsedBoldFont"] = value;
             }
         }
     }

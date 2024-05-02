@@ -40,7 +40,7 @@ namespace ASAM_Client.View.MainMenu
         public void AppsPage()
         {
             MainGrid.Children.Clear();
-            Pages.UserApps usercontrol = new Pages.UserApps();
+            Pages.UserAppsList usercontrol = new Pages.UserAppsList();
             MainGrid.Children.Add(usercontrol);
         }
 

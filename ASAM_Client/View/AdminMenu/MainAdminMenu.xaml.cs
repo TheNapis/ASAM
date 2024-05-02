@@ -60,8 +60,8 @@ namespace ASAM_Client.View.AdminMenu
             var result = MessageBox.Show("Vous allez quittez l'espace réservé.", "Quitter l'espace réservé",MessageBoxButton.YesNo,MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
             {
-                System.Diagnostics.Process.Start(System.Windows.Application.ResourceAssembly.Location);
-                System.Windows.Application.Current.Shutdown();
+                Process.Start(Application.ResourceAssembly.Location);
+                Application.Current.Shutdown();
             }
         }
         private void btnSeission_Click(object sender, RoutedEventArgs e)

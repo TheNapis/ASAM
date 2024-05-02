@@ -2,8 +2,23 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ASAM_Client.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="ACCDPath" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\ASAMClientConfigurationData.mdf;Integrated Security=True</Value>
+    <Setting Name="ACCDPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=ASAMClientConfigurationData.sqlite;Version=3;New=True;Compress=True;</Value>
+    </Setting>
+    <Setting Name="ErrorLevelAppList" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Dyslexic" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/Fonts/OpenDyslexic3-Regular.ttf</Value>
+    </Setting>
+    <Setting Name="DyslexicBold" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/Fonts/OpenDyslexic3-Bold.ttf</Value>
+    </Setting>
+    <Setting Name="UsedFont" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Microsoft YaHei UI</Value>
+    </Setting>
+    <Setting Name="UsedBoldFont" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Microsoft YaHei UI</Value>
     </Setting>
   </Settings>
 </SettingsFile>

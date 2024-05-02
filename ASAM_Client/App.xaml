@@ -2,8 +2,9 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:ASAM_Client"
+             xmlns:properties="clr-namespace:ASAM_Client.Properties"
              StartupUri="View/MainMenu/MainMenu.xaml">
     <Application.Resources>
-         
+        
     </Application.Resources>
 </Application>

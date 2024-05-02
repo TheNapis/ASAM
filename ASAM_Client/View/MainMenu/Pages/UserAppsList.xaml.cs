@@ -1,15 +1,13 @@
-﻿using System;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media.Imaging;
+﻿using ASAM_Client.Model;
+using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 using System.Diagnostics;
-using ASAM_Client.Model;
-using System.Data.SqlClient;
-using System.Data;
-using System.Collections.Generic;
-using System.Threading;
-using System.Windows.Markup;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace ASAM_Client.View.MainMenu.Pages
 {
@@ -19,12 +17,11 @@ namespace ASAM_Client.View.MainMenu.Pages
     /// 
     public partial class UserAppsList : UserControl
     {
-        static String connectionString = @"Data Source=C:\ASAM\ASAM_Client\ASAMClientConfigurationData.sqlite; Version = 3; New = True; Compress = True;";
+        static String connectionString = Properties.Settings.Default.ACCDPath;
         SQLiteConnection con;
         SQLiteCommand cmd;
         SQLiteDataAdapter adapter;
         DataSet ds;
-        SQLiteDataReader reader;
         string ExecutablePath;
 
         public UserAppsList()
@@ -62,12 +59,20 @@ namespace ASAM_Client.View.MainMenu.Pages
                 LstAppsXAML.ItemsSource = co1;
             }
             catch (Exception ex) 
-            { 
+            {
                 MainFunctions.Logger(ex.Message);
-                ErrorView.ErrorView view = new ErrorView.ErrorView();
-                view.ShowDialog();
-                view.Topmost = true;
-
+                if (Properties.Settings.Default.ErrorLevelAppList == false)
+                {
+                    ErrorView.ErrorView view = new ErrorView.ErrorView();
+                    view.ShowDialog();
+                    view.Topmost = true;
+                }
+                else if (Properties.Settings.Default.ErrorLevelAppList == true)
+                {
+                    txtNameApp.Text = "Échec du chargement";
+                    txtDescriptionApp.Text = "La liste d'application n'a pu être chargée\r\nCode d'erreur : Caneton";
+                    LstAppsXAML.Background = Brushes.DarkGray;
+                }
             } 
         }
 
