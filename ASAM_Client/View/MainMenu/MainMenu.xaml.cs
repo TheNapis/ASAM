@@ -1,8 +1,9 @@
-﻿using Microsoft.Toolkit.Uwp.Notifications;
-using System.Diagnostics;
-using System.Net.Sockets;
-using System.Net;
+﻿using ASAM_Client.View.ErrorView;
+using Microsoft.Toolkit.Uwp.Notifications;
 using System;
+using System.Diagnostics;
+using System.Net;
+using System.Net.Sockets;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media;
@@ -17,9 +18,6 @@ namespace ASAM_Client.View.MainMenu
     {
         public MainMenu()
         {
-            InitializeComponent();
-            GetBatteryPercentage();
-            VerifyInternet();
             DispatcherTimer LiveTime = new DispatcherTimer();
             LiveTime.Interval = TimeSpan.FromSeconds(1);
             LiveTime.Tick += timer_Tick;
@@ -29,13 +27,10 @@ namespace ASAM_Client.View.MainMenu
             LiveTime.Interval = TimeSpan.FromSeconds(5);
             LiveTime.Tick += timer2_Tick;
             LiveTime.Start();
-
-            DispatcherTimer LiveInternet = new DispatcherTimer();
-            LiveInternet.Interval = TimeSpan.FromSeconds(15);
-            LiveInternet.Tick += timer3_Tick;
-            LiveInternet.Start();
-
-
+            InitializeComponent();
+            GetBatteryPercentage();
+            VerifyInternet();
+            
         }
         public void AppsPage()
         {
@@ -66,13 +61,15 @@ namespace ASAM_Client.View.MainMenu
         {
             GetBatteryPercentage();
             VerifyInternet();
+            var orientation = SystemInformation.ScreenOrientation;
+            if (orientation != ScreenOrientation.Angle0)
+            {
+                OrientationError page = new OrientationError();
+                page.ShowDialog();
+            }
 
         }
-        void timer3_Tick(object sender, EventArgs e)
-        {
-            VerifyInternet();
-        }
-
+        
         void VerifyInternet()
         {
             try
@@ -97,7 +94,6 @@ namespace ASAM_Client.View.MainMenu
             else { }
 
         }
-
         private void btnHelp_Click(object sender, RoutedEventArgs e)
         {
             MainGrid.Children.Clear();

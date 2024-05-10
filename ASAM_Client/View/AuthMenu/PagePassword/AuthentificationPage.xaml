@@ -70,9 +70,9 @@
                    Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
 
             <PasswordBox Grid.Row="2" Height="42" Width="200"  Margin="22,28,28,0" Name="passwordBox1" VerticalAlignment="Top" 
-                    Background="LightBlue" Foreground="DarkBlue" MaxLength="25" PasswordChar="*" 
-                     VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     FontSize="14" PasswordChanged="passwordBox1_PasswordChanged" KeyDown="OnKeyDownHandler"/>
+                         Background="LightBlue" Foreground="DarkBlue" MaxLength="25" PasswordChar="*" 
+                         VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                         FontSize="14" PasswordChanged="passwordBox1_PasswordChanged" KeyDown="OnKeyDownHandler"/>
 
         </Grid>
 

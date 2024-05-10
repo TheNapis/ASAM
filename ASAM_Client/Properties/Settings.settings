@@ -20,5 +20,8 @@
     <Setting Name="UsedBoldFont" Type="System.String" Scope="User">
       <Value Profile="(Default)">Microsoft YaHei UI</Value>
     </Setting>
+    <Setting Name="password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">password</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

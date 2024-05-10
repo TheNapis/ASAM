@@ -11,6 +11,12 @@ namespace ASAM_Client.View.AdminMenu.Pages
     {
         string NewConnChain;
         bool NewErrorLevelAppList;
+
+        string ActualPassword;
+        string NewPassword;
+        string RetypedNewPassword;
+        bool ChangePassword = false;
+
         public Settings()
         {
             InitializeComponent();
@@ -27,6 +33,7 @@ namespace ASAM_Client.View.AdminMenu.Pages
 
         private void btnValidate_Click(object sender, RoutedEventArgs e)
         {
+            VerifyNewPassword();
             MessageBox.Show("MODIFIER CES PARAMETRES PEUVENT AVOIR UN IMPACT SUR ASAM\n\rNOTAMMENT SI ILS SONT MAL REGLES !");
             var result = MessageBox.Show("Voulez-vous enregistrer ces paramètres ?","ATTENTION",MessageBoxButton.YesNo,MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
@@ -70,7 +77,54 @@ namespace ASAM_Client.View.AdminMenu.Pages
         {
             Properties.Settings.Default.ACCDPath = NewConnChain;
             Properties.Settings.Default.ErrorLevelAppList = NewErrorLevelAppList;
+            if (ChangePassword == true)
+            {
+                Properties.Settings.Default.password = NewPassword;
+            }
             Properties.Settings.Default.Save();
+        }
+        private void VerifyNewPassword()
+        {
+            if (!string.IsNullOrEmpty(ActualPassword))
+            {
+                if (ActualPassword == Properties.Settings.Default.password)
+                {
+                    if (!string.IsNullOrEmpty(NewPassword) & !string.IsNullOrEmpty(NewPassword))
+                    {
+                        if (NewPassword == RetypedNewPassword)
+                        {
+                            ChangePassword = true;
+                            MessageBox.Show("Le nouveau mot de passe est conforme.\n\rSi vous avez modifié que le mot de passe,\n\r" +
+                                "vous pouvez ignorer les messages qui suivent.");
+                        }
+                        else { MessageBox.Show("Les nouveaux mots de passe ne correspndent pas.", "Mot de passe non valide"); }
+
+                    }
+                    else { MessageBox.Show("Les nouveaux mots de passe ne correspndent pas ou sont non renseignés.", "Mot de passe non valide"); }
+
+                }else { MessageBox.Show("Le mot de passe actuel n'est pas bon.", "Mot de passe incorrect"); }
+                
+            }
+            else
+            {
+                MessageBox.Show("Le mot de passe ne sera pas changé.", "Mot de passe inchangé");
+            }
+        }
+
+        private void txtNewPasswordRetyped_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            RetypedNewPassword = txtNewPasswordRetyped.Text;
+        }
+
+
+        private void txtNewPassword_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            NewPassword = txtNewPassword.Text;
+        }
+
+        private void txtActualPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            ActualPassword = txtActualPassword.Password;
         }
     }
 }

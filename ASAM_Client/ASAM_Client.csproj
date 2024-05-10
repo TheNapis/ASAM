@@ -107,6 +107,9 @@
     <Compile Include="View\ErrorView\ErrorView.xaml.cs">
       <DependentUpon>ErrorView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ErrorView\OrientationError.xaml.cs">
+      <DependentUpon>OrientationError.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainMenu\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
@@ -169,6 +172,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ErrorView\ErrorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ErrorView\OrientationError.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

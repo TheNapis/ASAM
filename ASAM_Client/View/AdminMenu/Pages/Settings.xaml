@@ -24,9 +24,10 @@
         <Grid Grid.Row="1" >
             <Grid.RowDefinitions>
                 <RowDefinition/>
+                <RowDefinition Height="10"/>
                 <RowDefinition/>
                 <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="10"/>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -36,7 +37,9 @@
             <TextBlock Text="Ces paramètres sont sensibles faites attention en les modifiant" FontSize="20" 
                        HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" 
                        FontFamily="Microsoft YaHei UI" FontWeight="Bold"/>
-            
+
+            <Grid Grid.Row="1" Background="#0044a3"/>
+
             <StackPanel Grid.Row="2" Orientation="Horizontal">
                 <TextBlock Text="Chaîne de connexion à ACCD :" FontSize="16" Foreground="White" VerticalAlignment="Center" Margin="10"
                            FontFamily="Microsoft YaHei UI"/>
@@ -54,8 +57,40 @@
                     <ComboBoxItem x:Name="No_ITEM" Content="Non"/>
                 </ComboBox>
             </StackPanel>
-            
 
+            <Grid Grid.Row="4" Background="#0044a3"/>
+
+            <TextBlock Text="Changement du mot de passe de la zone réservée" FontSize="20" Grid.Row="5" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" 
+                       FontFamily="Microsoft YaHei UI" FontWeight="Bold"/>
+
+            <StackPanel Grid.Row="6" Orientation="Horizontal">
+                
+                <TextBlock Text="Mot de passe actuel :" FontSize="16" Foreground="White" VerticalAlignment="Center" Margin="10"
+               FontFamily="Microsoft YaHei UI" />
+                
+                <PasswordBox x:Name="txtActualPassword" Height="30"  Margin="10" Width="500" FontSize="14"
+                             FontFamily="Microsoft YaHei UI" VerticalContentAlignment="Center" PasswordChanged="txtActualPassword_PasswordChanged"
+                             PasswordChar="*"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="7" Orientation="Horizontal">
+
+                <TextBlock Text="Nouveau mot de passe :" FontSize="16" Foreground="White" VerticalAlignment="Center" Margin="10"
+                           FontFamily="Microsoft YaHei UI" />
+
+                <TextBox x:Name="txtNewPassword" Height="30" Margin="10" Width="500" FontSize="14"
+                         FontFamily="Microsoft YaHei UI" VerticalContentAlignment="Center" TextChanged="txtNewPassword_TextChanged"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="8" Orientation="Horizontal">
+
+                <TextBlock Text="Re-tapez le nouveau mot de passe :" FontSize="16" Foreground="White" VerticalAlignment="Center" Margin="10"
+               FontFamily="Microsoft YaHei UI" />
+
+                <TextBox x:Name="txtNewPasswordRetyped" Height="30" Margin="10" Width="500" FontSize="14"
+             FontFamily="Microsoft YaHei UI" VerticalContentAlignment="Center" TextChanged="txtNewPasswordRetyped_TextChanged"/>
+            </StackPanel>
 
 
 
