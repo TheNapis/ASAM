@@ -18,6 +18,10 @@ namespace ASAM_Client.View.MainMenu
     {
         public MainMenu()
         {
+            if (Properties.Settings.Default.PCState == false)
+            {
+                System.Windows.MessageBox.Show("Bonjour,\n\rcet ordinateur est en panne.\n\rPour la raison : " + Properties.Settings.Default.LastStatus + " .", "Avertissement", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
             DispatcherTimer LiveTime = new DispatcherTimer();
             LiveTime.Interval = TimeSpan.FromSeconds(1);
             LiveTime.Tick += timer_Tick;
@@ -27,6 +31,7 @@ namespace ASAM_Client.View.MainMenu
             LiveTime.Interval = TimeSpan.FromSeconds(5);
             LiveTime.Tick += timer2_Tick;
             LiveTime.Start();
+
             InitializeComponent();
             GetBatteryPercentage();
             VerifyInternet();

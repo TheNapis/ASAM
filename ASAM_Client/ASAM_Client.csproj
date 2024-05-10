@@ -92,6 +92,9 @@
     <Compile Include="View\AdminMenu\Pages\PCInfos.xaml.cs">
       <DependentUpon>PCInfos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\AdminMenu\Pages\PCState.xaml.cs">
+      <DependentUpon>PCState.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AdminMenu\Pages\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
@@ -152,6 +155,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AdminMenu\Pages\PCInfos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AdminMenu\Pages\PCState.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

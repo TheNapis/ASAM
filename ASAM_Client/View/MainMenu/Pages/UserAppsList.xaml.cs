@@ -27,9 +27,15 @@ namespace ASAM_Client.View.MainMenu.Pages
         public UserAppsList()
         {
             InitializeComponent();
+            txtPanne.Visibility = Visibility.Hidden;
             txtNameApp.Text = "";
             txtDescriptionApp.Text = "";
             FillList();
+            if (Properties.Settings.Default.PCState == false)
+            {
+                txtPanne.Visibility = Visibility.Visible;
+                txtPanne.Text = Properties.Settings.Default.LastStatus;
+            }
         }
 
         public void FillList()

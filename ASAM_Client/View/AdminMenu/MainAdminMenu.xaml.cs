@@ -33,7 +33,7 @@ namespace ASAM_Client.View.AdminMenu
         }
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            var result = MessageBox.Show("Voulez vous vraiment quitter ASAM ? " + " Le client se relancera si le PC est redémarré.", "Quitter ASAM Client", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            var result = MessageBox.Show("Voulez vous vraiment quitter ASAM ?\n\rLe client se relancera si le PC est redémarré.", "Quitter ASAM Client", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
             {
                 Application.Current.Shutdown();
@@ -80,6 +80,12 @@ namespace ASAM_Client.View.AdminMenu
         private void btnSettings_Click(object sender, RoutedEventArgs e)
         {
             Pages.Settings page = new Pages.Settings();
+            page.ShowDialog();
+        }
+
+        private void btnState_Click(object sender, RoutedEventArgs e)
+        {
+            Pages.PCState page = new Pages.PCState();
             page.ShowDialog();
         }
     }

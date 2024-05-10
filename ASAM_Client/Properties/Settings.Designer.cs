@@ -12,7 +12,7 @@ namespace ASAM_Client.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.9.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -47,48 +47,6 @@ namespace ASAM_Client.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("/Fonts/OpenDyslexic3-Regular.ttf")]
-        public string Dyslexic {
-            get {
-                return ((string)(this["Dyslexic"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("/Fonts/OpenDyslexic3-Bold.ttf")]
-        public string DyslexicBold {
-            get {
-                return ((string)(this["DyslexicBold"]));
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Microsoft YaHei UI")]
-        public string UsedFont {
-            get {
-                return ((string)(this["UsedFont"]));
-            }
-            set {
-                this["UsedFont"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Microsoft YaHei UI")]
-        public string UsedBoldFont {
-            get {
-                return ((string)(this["UsedBoldFont"]));
-            }
-            set {
-                this["UsedBoldFont"] = value;
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("password")]
@@ -98,6 +56,42 @@ namespace ASAM_Client.Properties {
             }
             set {
                 this["password"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool PCState {
+            get {
+                return ((bool)(this["PCState"]));
+            }
+            set {
+                this["PCState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("05/26/2024 20:07:00")]
+        public global::System.DateTime LastStateDate {
+            get {
+                return ((global::System.DateTime)(this["LastStateDate"]));
+            }
+            set {
+                this["LastStateDate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Opérationnel")]
+        public string LastStatus {
+            get {
+                return ((string)(this["LastStatus"]));
+            }
+            set {
+                this["LastStatus"] = value;
             }
         }
     }

@@ -1,0 +1,209 @@
+﻿<Window x:Class="ASAM_Client.View.AdminMenu.Pages.PCState"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ASAM_Client.View.AdminMenu.Pages"
+        xmlns:fa="http://schemas.fontawesome.com/icons/svg"
+        mc:Ignorable="d"
+        Title="Etat du PC - ASAM Client" Height="500" Width="800" ResizeMode="NoResize" WindowStyle="None" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#0044a3">
+            <TextBlock Text="Etat du PC" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"
+       Foreground="White" FontFamily="Microsoft Yahei UI" />
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.RowSpan="3" Background="#2e75d8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+
+            <!--PC State line-->
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Orientation="Horizontal" 
+             VerticalAlignment="Center" Margin="10">
+                    <TextBlock Text="L'état du PC est :"
+                FontSize="18" FontWeight="Bold" 
+                Foreground="White" 
+                FontFamily="Microsoft YaHei UI"
+                VerticalAlignment="Center"
+                />
+                    <fa:SvgAwesome x:Name="IconSTATUS" Icon="Solid_Circle"
+                    PrimaryColor="White"
+                    Height="30"
+                    Margin="30,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"
+             VerticalAlignment="Center" Margin="10"
+             Grid.Row="1">
+                    <TextBlock Text="Raison :"
+                FontSize="18" 
+                Foreground="White" 
+                FontFamily="Microsoft YaHei UI"
+                VerticalAlignment="Center"
+/>
+                    <TextBlock x:Name="LASTSTATUS"
+                        Text=" STATUS"
+                FontSize="16" FontWeight="Bold" 
+                Foreground="White" 
+                FontFamily="Microsoft YaHei UI"
+                VerticalAlignment="Center"
+                Margin="10,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" 
+                            Grid.Column="1" Grid.RowSpan="2">
+                    <TextBlock Text="Dernier changement le : "
+                               FontSize="18" FontWeight="Bold" 
+                               Foreground="White" 
+                               FontFamily="Microsoft YaHei UI"
+                               VerticalAlignment="Center"/>
+                    <TextBlock x:Name="LASTDATE"
+                        Text="DATE "
+                        FontSize="16" FontWeight="Bold" 
+                        Foreground="White" 
+                        FontFamily="Microsoft YaHei UI"
+                        VerticalAlignment="Center"/>
+                </StackPanel>
+                
+            </Grid>
+
+            <Grid Grid.Row="1" Background="#0044a3">
+                
+            </Grid>
+
+            <TextBlock Grid.Row="2" Text="Changement d'état de l'ordinateur :"
+                       FontSize="18" FontWeight="Bold" 
+                       Foreground="White" 
+                       FontFamily="Microsoft YaHei UI"
+                       VerticalAlignment="Center"
+                       Margin="10,0,0,0"/>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel  VerticalAlignment="Center" Margin="10,0,0,0" >
+                    <RadioButton x:Name="RB_OK" Grid.Row="3" 
+                 Content="Opérationnel" Foreground="White" 
+                 VerticalAlignment="Center" Margin="0,0,0,10"
+                 FontSize="16" 
+                 FontFamily="Microsoft YaHei UI"
+                 VerticalContentAlignment="Center"/>
+                    <RadioButton x:Name="RB_NOTOK" Grid.Row="3"
+                 Content="En panne" Foreground="White"
+                 VerticalAlignment="Center"
+                 FontSize="16" 
+                 FontFamily="Microsoft YaHei UI"
+                 VerticalContentAlignment="Center"
+                 />
+
+                </StackPanel>
+                <Button x:Name="btnValid"  BorderThickness="0" Grid.Column="1" Foreground="White" Cursor="Hand" FontSize="16" 
+                        Width="auto"  HorizontalAlignment="Right" Margin="10" Height="60"
+                        Click="btnValid_Click">
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                        <fa:SvgAwesome Grid.Row="0" Icon="Solid_Check"  PrimaryColor="White" Height="auto" VerticalAlignment="Center"/>
+                        <TextBlock Text="Valider" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,0,0" FontFamily="Microsoft YaHei UI" FontSize="16"/>
+                    </StackPanel>
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#32cd32"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#259a25"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="15"
+    Background="{TemplateBinding Background}">
+                                <ContentPresenter/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+            
+
+            <StackPanel Grid.Row="4">
+                <TextBlock Grid.Row="2" Text="Raison :"
+           FontSize="17"
+           Foreground="White" 
+           FontFamily="Microsoft YaHei UI"
+           VerticalAlignment="Center"
+           Margin="10,0,0,0"/>
+                <ComboBox x:Name="CB_Reason" Width="300" HorizontalAlignment="Left" Margin="10" FontSize="16">
+                    <ComboBoxItem Content="PANNE MATERIELLE"/>
+                    <ComboBoxItem Content="PANNE LOGICIELLE"/>
+                    <ComboBoxItem Content="PANNE SYSTEME"/>
+                    <ComboBoxItem Content="AUTRE PANNE"/>
+                </ComboBox>
+            </StackPanel>
+
+            <Grid Grid.Row="5" Background="#0044a3">
+
+
+                <Button x:Name="btnClose" BorderThickness="0" Grid.Column="0" Grid.Row="1" Foreground="White" Cursor="Hand" FontSize="16" 
+                        Width="150" Click="btnClose_Click" HorizontalAlignment="Right" Margin="10">
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <fa:SvgAwesome Grid.Row="0" Icon="Solid_Xmark"  PrimaryColor="White" Height="auto" VerticalAlignment="Center"/>
+                        <TextBlock Text="Fermer" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,0,0" FontFamily="Microsoft YaHei UI" FontSize="16"/>
+                    </StackPanel>
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#fa8072"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#c6655a"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="15"
+                    Background="{TemplateBinding Background}">
+                                <ContentPresenter/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+
+        </Grid>
+
+
+
+    </Grid>
+</Window>

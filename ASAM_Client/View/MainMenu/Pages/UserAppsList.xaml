@@ -92,6 +92,13 @@
             </Button>
 
         </Grid>
+        <TextBlock x:Name="txtPanne"
+                   Grid.Column="3" HorizontalAlignment="Right" 
+                   Grid.Row="2" VerticalAlignment="Center"
+                   Text="EN PANNE" 
+                   TextAlignment="Center" Margin="0,0,10,0"
+                   Foreground="White" FontSize="16"
+                   FontFamily="Microsoft YaHei UI"/>
 
 
 

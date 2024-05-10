@@ -32,7 +32,19 @@ namespace ASAM_Client.Model
             catch { }
         }
 
-
+        public static void StatusLogger(string lines)
+        {
+            string path = @"C:\ASAM\Logs\Status\";
+            VerifyDir(path);
+            string fileName = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + ".txt";
+            try
+            {
+                System.IO.StreamWriter file = new System.IO.StreamWriter(path + "ASAM_Client_StatusLogs " + fileName, true);
+                file.WriteLine(DateTime.Now.ToString() + " : " + lines);
+                file.Close();
+            }
+            catch (Exception) { }
+        }
     }
 
     

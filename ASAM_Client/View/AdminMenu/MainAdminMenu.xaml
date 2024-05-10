@@ -64,6 +64,9 @@
             <TextBlock Text="Bonjour, sélectionner une option." FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"
                        Foreground="White" FontFamily="Microsoft Yahei UI" />
 
+
+
+            <!--Btn AboutPC, AboutASAM and Settings -->
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -154,8 +157,35 @@ Background="{TemplateBinding Background}">
 
             </Grid>
 
-            
+            <!--Btn PCState -->
+            <Button x:Name="btnState" BorderThickness="0" Grid.Row="2" Foreground="White" Cursor="Hand" 
+                        Width="150" Height="100" Click="btnState_Click"  HorizontalAlignment="Center" >
+                <Grid>
+                    <fa:SvgAwesome Icon="Solid_ChartBar"  PrimaryColor="White" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <TextBlock Text="Etat du PC" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" FontFamily="Microsoft YaHei UI" FontSize="14"/>
+                </Grid>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#fa8072"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#c6655a"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15"
+Background="{TemplateBinding Background}">
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
 
+
+            <!--Btn Close ASAM-->
             <Button x:Name="btnClose" BorderThickness="0" Grid.Column="0" Grid.Row="3" Foreground="White" Cursor="Hand" 
                         Width="150" Height="100" Click="btnClose_Click"  HorizontalAlignment="Center" >
                 <Grid>
@@ -182,9 +212,8 @@ Background="{TemplateBinding Background}">
                 </Button.Template>
             </Button>
 
-
-
-
+            
+            <!--Btn Shutdown, Restart and logoff -->
             <Grid Grid.Row="4">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -192,8 +221,6 @@ Background="{TemplateBinding Background}">
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                
-                
                 <Button x:Name="btnSeission" BorderThickness="0" Grid.Column="2" Foreground="White" Cursor="Hand" 
                         Width="150" Height="100" Click="btnSeission_Click"  HorizontalAlignment="Center" Margin="0,10,0,10">
                     <Grid>
@@ -270,12 +297,7 @@ Background="{TemplateBinding Background}">
                     </Button.Template>
                 </Button>
             </Grid>
-
             
-
-
-
-
         </Grid>
 
     </Grid>
