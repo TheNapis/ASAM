@@ -1,5 +1,4 @@
 ﻿using ASAM_Client.View.ErrorView;
-using Microsoft.Toolkit.Uwp.Notifications;
 using System;
 using System.Diagnostics;
 using System.Net;
@@ -18,6 +17,8 @@ namespace ASAM_Client.View.MainMenu
     {
         public MainMenu()
         {
+            logo = Properties.Settings.Default.logo;
+            Mylogo = logo;
             if (Properties.Settings.Default.PCState == false)
             {
                 System.Windows.MessageBox.Show("Bonjour,\n\rcet ordinateur est en panne.\n\rPour la raison : " + Properties.Settings.Default.LastStatus + " .", "Avertissement", MessageBoxButton.OK, MessageBoxImage.Exclamation);
@@ -186,18 +187,6 @@ namespace ASAM_Client.View.MainMenu
                             ICON1.Icon = FontAwesome6.EFontAwesomeIcon.Solid_BatteryQuarter;
                             ICON1.PrimaryColor = Brushes.Red;
 
-                            if (message3 == false)
-                            {
-                                new ToastContentBuilder()
-                                        .AddArgument("action", "viewConversation")
-                                        .AddArgument("conversationId", 9813)
-                                        .AddText("Batterie Faible")
-                                        .AddText("La batterie est faible.")
-                                        .AddText("Veuillez la recharger dès que possible pour éviter toute perte de données.")
-                                        .Show();
-                                message3 = true;
-                            }
-                            else { }
 
                         }
                         else if (estimatedChargeRemaining >= 8)
@@ -237,5 +226,16 @@ namespace ASAM_Client.View.MainMenu
 
             }
         }
+
+        private string logo;
+
+        public string Mylogo
+        {
+            get { return logo; }
+            set { logo = value; }
+        }
+
+
+
     }
 }

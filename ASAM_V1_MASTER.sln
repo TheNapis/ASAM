@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASAM_Client", "ASAM_Client\ASAM_Client.csproj", "{4BEA1395-5A69-4171-90BE-D041BA6B9029}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASAM_Master", "ASAM_Master\ASAM_Master.csproj", "{B46ACA4E-DB0F-405C-897E-D902323EFAC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4BEA1395-5A69-4171-90BE-D041BA6B9029}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BEA1395-5A69-4171-90BE-D041BA6B9029}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BEA1395-5A69-4171-90BE-D041BA6B9029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B46ACA4E-DB0F-405C-897E-D902323EFAC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B46ACA4E-DB0F-405C-897E-D902323EFAC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B46ACA4E-DB0F-405C-897E-D902323EFAC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B46ACA4E-DB0F-405C-897E-D902323EFAC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

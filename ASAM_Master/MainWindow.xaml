@@ -1,0 +1,174 @@
+﻿<Window x:Class="ASAM_Master.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ASAM_Master"
+        xmlns:fa="http://schemas.fontawesome.com/icons/svg"
+        mc:Ignorable="d"
+        Title="ASAM - Master" Height="600" Width="1000" WindowStyle="None" WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <Border CornerRadius="35" BorderThickness="10" BorderBrush="White">
+        <Border CornerRadius="25" BorderThickness="10">
+
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#0044a3" Offset="0.2"/>
+                    <GradientStop Color="#2e75d8" Offset="0.8"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+
+            <Grid>
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#0044a3" Offset="0.2"/>
+                        <GradientStop Color="#2e75d8" Offset="0.8"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Border Background="White" BorderThickness="0" CornerRadius="25" Grid.Row="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto" MinWidth="60"/>
+                            <ColumnDefinition Width="auto" MinWidth="60"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Border  Margin="0"   BorderBrush="White" BorderThickness="2"
+                               CacheMode="BitmapCache" CornerRadius="25,0,0,25">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/logo.png"  Stretch="UniformToFill"/>
+                            </Border.Background>
+                        </Border>
+
+                        <Button Name="btn_Quit" Grid.Column="5" BorderThickness="0" Click="btn_Quit_Click"
+                                MouseEnter="btn_Quit_MouseEnter" MouseLeave="btn_Quit_MouseLeave">
+
+                            <fa:SvgAwesome x:Name="quitIcon" Icon="Regular_CircleXmark" PrimaryColor="#0044a3" Height="40">
+                                <fa:SvgAwesome.Style>
+                                    <Style TargetType="{x:Type fa:SvgAwesome}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="PrimaryColor" Value="IndianRed"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </fa:SvgAwesome.Style>
+                            </fa:SvgAwesome>
+
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border Background="{TemplateBinding Background}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+
+                        
+                        <StackPanel Orientation="Vertical" Grid.Column="1" Margin="5,0,0,0">
+                            <TextBlock Name="timeTb" Text="Chargement..." Foreground="#002150" 
+                                       FontFamily="Microsoft YaHei UI" FontWeight="Bold" FontSize="26"
+                                       Margin="0,10,0,0" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                            <!-- Heure -->
+
+                            <TextBlock Name="dateTb" Text="Chargement..." Foreground="#002150" 
+                                       FontFamily="Microsoft YaHei UI" FontSize="16" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                            <!-- Date -->
+                        </StackPanel>
+
+                        <Border Background="#2e75d8" Grid.Column="2" CornerRadius="25" BorderThickness="12" Width="75">
+                            <StackPanel>
+                                <Button Name="btnBattery" BorderThickness="0" Margin="5" IsEnabled="False" VerticalAlignment="Center">
+
+                                    <fa:SvgAwesome Name="ICON1" Icon="Solid_Plug" Rotation="90" PrimaryColor="White" Height="30" Margin="5"/>
+
+                                    <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border Background="{TemplateBinding Background}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="DodgerBlue"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                                </Button>
+                                <!-- Bouton Batterie -->
+                            </StackPanel>
+                        </Border>
+
+                        <Border Background="#2e75d8" Grid.Column="3" CornerRadius="25" BorderThickness="12" Width="75">
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Button Name="btnWifi" BorderThickness="0" Margin="5" IsEnabled="False" VerticalAlignment="Center">
+
+                                    <fa:SvgAwesome Name="ICON2" Icon="Solid_Wifi" PrimaryColor="White" Height="25" VerticalAlignment="Center"/>
+
+                                    <Button.Style>
+                                        <Style TargetType="{x:Type Button}">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type Button}">
+                                                        <Border Background="{TemplateBinding Background}">
+                                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="DodgerBlue"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+                                <!-- Bouton Wifi (desactive) -->
+                            </StackPanel>
+                        </Border>
+
+
+
+                    </Grid>
+                </Border>
+
+                        
+                
+                
+            </Grid>
+
+        </Border>
+    </Border>
+</Window>

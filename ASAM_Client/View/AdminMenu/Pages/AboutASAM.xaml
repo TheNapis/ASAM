@@ -38,7 +38,7 @@
                        Foreground="White"/>
                 <TextBlock Grid.Row="1" Text="Version : 1.0" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="20" 
                        Foreground="White"/>
-                <Image Grid.Row="0" Grid.RowSpan="5" Source="/Pictures/logo 600x400.png" HorizontalAlignment="Right" Margin="0,0,30,0" Stretch="None"/>
+                <Image Grid.Row="0" Grid.RowSpan="5" Source="/logo.png" HorizontalAlignment="Right" Margin="0,0,30,0" Stretch="None"/>
 
                 <TextBlock Grid.Row="2" Text="Date de la version : 26/04/2024" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="20" 
                            Foreground="White"/>
@@ -52,8 +52,7 @@
                 <TextBlock Grid.Row="6" Text="Liste des intégrations : " VerticalAlignment="Center" Margin="5,0,0,0" FontSize="20" 
                            Foreground="White" TextWrapping="Wrap" HorizontalAlignment="Left" TextAlignment="Left"/>
                 <TextBlock Grid.Row="7" Grid.RowSpan="2" Text="FontAwesome6.Svg par Codinion, 
-FontAwesome (Icônes),
-Microsoft.Toolkit.Uwp.Notifications par Microsoft.Toolkit et dotnetfoundation, 
+FontAwesome (Icônes), 
 Newtonsoft.Json par James Newton-King, 
 System.Data.SQLite par SQLite Development Team" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="20" 
                            Foreground="White" TextWrapping="Wrap" HorizontalAlignment="Left" TextAlignment="Left"/>

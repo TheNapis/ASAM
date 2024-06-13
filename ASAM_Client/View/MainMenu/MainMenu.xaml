@@ -9,7 +9,7 @@
         xmlns:LocalPages="clr-namespace:ASAM_Client.View.MainMenu.Pages"
         xmlns:fa="http://schemas.fontawesome.com/icons/svg"
         mc:Ignorable="d"
-        Title="ASAM Client - Menu Principal" Height="500" Width="800" ResizeMode="NoResize" 
+        Title="ASAM Client - Menu Principal" Height="500" Width="1000" ResizeMode="NoResize" 
         WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None">
     <Grid>
         <Grid.RowDefinitions>
@@ -34,7 +34,7 @@
                 <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
 
-            <Image Source="/Pictures/logo 600x400.png" HorizontalAlignment="Left" />
+            <Image Source="/logo.png" HorizontalAlignment="Left" />
             <!-- Logo CGAS -->
 
             <TextBlock Name="timeTb" Text="Chargement..." Grid.Column="1" Foreground="White" 
@@ -43,7 +43,7 @@
             <!-- Heure -->
 
             <TextBlock Name="dateTb" Text="Chargement..." Grid.Column="1" Foreground="White" 
-           FontFamily="Microsoft YaHei UI" FontSize="16"
+           FontFamily="Microsoft YaHei UI" FontSize="20"
            VerticalAlignment="Bottom" Margin="10,0,10,20" HorizontalAlignment="Center"/>
             <!-- Date -->
 

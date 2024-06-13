@@ -94,5 +94,17 @@ namespace ASAM_Client.Properties {
                 this["LastStatus"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/logo.png")]
+        public string logo {
+            get {
+                return ((string)(this["logo"]));
+            }
+            set {
+                this["logo"] = value;
+            }
+        }
     }
 }

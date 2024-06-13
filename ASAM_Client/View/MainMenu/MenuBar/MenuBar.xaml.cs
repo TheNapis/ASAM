@@ -1,5 +1,4 @@
-﻿using Microsoft.Toolkit.Uwp.Notifications;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
@@ -7,7 +6,6 @@ using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media;
 using System.Windows.Threading;
-using ASAM_Client.View.MainMenu;
 
 
 namespace ASAM_Client.View.MainMenu.MenuBar
@@ -167,18 +165,6 @@ namespace ASAM_Client.View.MainMenu.MenuBar
                             ICON1.Icon = FontAwesome6.EFontAwesomeIcon.Solid_BatteryQuarter;
                             ICON1.PrimaryColor = Brushes.Red;
 
-                            if (message3 == false)
-                            {
-                                new ToastContentBuilder()
-                                        .AddArgument("action", "viewConversation")
-                                        .AddArgument("conversationId", 9813)
-                                        .AddText("Batterie Faible")
-                                        .AddText("La batterie est faible.")
-                                        .AddText("Veuillez la recharger dès que possible pour éviter toute perte de données.")
-                                        .Show();
-                                message3 = true;
-                            }
-                            else { }
 
                         }
                         else if (estimatedChargeRemaining >= 8)

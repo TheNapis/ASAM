@@ -20,5 +20,8 @@
     <Setting Name="LastStatus" Type="System.String" Scope="User">
       <Value Profile="(Default)">Opérationnel</Value>
     </Setting>
+    <Setting Name="logo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/logo.png</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
