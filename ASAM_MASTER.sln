@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASAM_Client", "ASAM_Client\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASAM_Master", "ASAM_Master\ASAM_Master.csproj", "{B46ACA4E-DB0F-405C-897E-D902323EFAC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASAM_DBSettings", "ASAM_DBSettings\ASAM_DBSettings.csproj", "{13ED8E6D-843D-42E4-9BED-3AEB9AC4257F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B46ACA4E-DB0F-405C-897E-D902323EFAC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B46ACA4E-DB0F-405C-897E-D902323EFAC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B46ACA4E-DB0F-405C-897E-D902323EFAC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13ED8E6D-843D-42E4-9BED-3AEB9AC4257F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13ED8E6D-843D-42E4-9BED-3AEB9AC4257F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13ED8E6D-843D-42E4-9BED-3AEB9AC4257F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13ED8E6D-843D-42E4-9BED-3AEB9AC4257F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

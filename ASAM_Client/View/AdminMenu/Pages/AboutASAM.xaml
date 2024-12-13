@@ -7,7 +7,7 @@
         xmlns:fa="http://schemas.fontawesome.com/icons/svg"
         mc:Ignorable="d"
         Title="A propos - ASAM Client" d:Height="700" d:Width="1200" ResizeMode="NoResize" WindowStyle="None" WindowState="Maximized">
-    <Grid>
+    <Grid Background="#2e75d8">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="70"/>
@@ -19,7 +19,7 @@
                Foreground="White" FontFamily="Microsoft Yahei UI" />
             </Grid>
 
-            <Grid Grid.Row="1" Background="#2e75d8">
+            <Grid Grid.Row="1" Background="#2e75d8" Margin="15">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -34,16 +34,16 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Text="Composante : ASAM Client" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="20" 
+                <TextBlock Name="txt_Composante" Grid.Row="0" Text="Composante : Non disponible" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="20" 
                        Foreground="White"/>
-                <TextBlock Grid.Row="1" Text="Version : 1.0" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="20" 
+                <TextBlock Name="txt_Version" Grid.Row="1" Text="Version : Non disponible" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="20" 
                        Foreground="White"/>
                 <Image Grid.Row="0" Grid.RowSpan="5" Source="/logo.png" HorizontalAlignment="Right" Margin="0,0,30,0" Stretch="None"/>
 
-                <TextBlock Grid.Row="2" Text="Date de la version : 26/04/2024" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="20" 
+                <TextBlock Name="txt_DateVersion" Grid.Row="2" Text="Date de la version : Non disponible" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="20" 
                            Foreground="White"/>
 
-                <TextBlock Grid.Row="3" Text="Version pour les années : 2024/2025" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="20" 
+                <TextBlock Name="txt_VersionPourAnnee" Grid.Row="3" Text="Version pour les années : Non disponible" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="20" 
                            Foreground="White"/>
 
                 <TextBlock Grid.Row="4" Text="Crée par Napis" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="20" 

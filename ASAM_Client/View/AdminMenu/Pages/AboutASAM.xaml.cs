@@ -22,6 +22,11 @@ namespace ASAM_Client.View.AdminMenu.Pages
         public AboutASAM()
         {
             InitializeComponent();
+            txt_Composante.Text = "Composante : " + Properties.Settings.Default.Composante;
+            txt_Version.Text = "Version : " + Properties.Settings.Default.Version;
+            txt_DateVersion.Text = "Date de la version : " + Properties.Settings.Default.DatedeVersion;
+            txt_VersionPourAnnee.Text = "Version pour les années : " + Properties.Settings.Default.VersionPourAnnes;
+
         }
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
